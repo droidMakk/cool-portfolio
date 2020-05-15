@@ -1,4 +1,91 @@
-div{
-    background-color: green;
-    padding: 10px;
+@import './globals.scss';
+
+body {
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+    height: 100vh;
+
+    .navbar {
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #ffb300;
+
+        .navbar__profile {
+            padding: 30px 50px;
+            transform: none;
+            width: 80%;
+
+            img {
+                margin: 10px 0px;
+            }
+
+            .navbar__profile-content {
+                h1 {
+                    font-size: x-large;
+
+                    .name{
+                        font-weight: 700;
+                    }
+                }
+
+                hr {
+                    margin: 5px 0px;
+                }
+            }
+
+            .navbar__profile--links {
+                display: flex;
+                justify-content: space-evenly;
+                margin: 10px 0px;
+                padding: 0px;
+                li {
+                    margin: 0px 5px;
+                }
+            }
+
+            .navbar__links {
+                width: 100%;
+                padding: 20px 10px;
+
+                li {
+                    text-decoration: underline;
+                    padding: 10px 0px;
+                    a {
+                        cursor: pointer;
+                        display: inline-block;
+                        position: relative;
+                        transition: 0.5s;
+
+                        &:hover {
+                            padding-right: 24px;
+                            padding-left: 8px;
+
+                            &::after {
+                                opacity: 1;
+                                right: 10px;
+                            }
+                        }
+
+                        &::after {
+                            content: "  🎈";
+                            position: absolute;
+                            opacity: 0;
+                            right: -20px;
+                            transition: 0.5s;
+                        }
+                    }
+
+                    &:hover {
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        grid-row: 1;
+    }
 }

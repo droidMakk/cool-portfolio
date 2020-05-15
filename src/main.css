@@ -1,3 +1,69 @@
-div {
-  background-color: green;
-  padding: 10px; }
+@charset "UTF-8";
+body {
+  margin: 0px;
+  font-family: 'Courier New', Courier, monospace; }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+ul, li {
+  list-style: none;
+  margin-block-start: 0em;
+  margin-block-end: 0em; }
+
+body {
+  display: grid;
+  grid-template-columns: 30vw 70vw;
+  height: 100vh; }
+  body .navbar {
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffb300; }
+    body .navbar .navbar__profile {
+      padding: 30px 50px;
+      transform: none;
+      width: 80%; }
+      body .navbar .navbar__profile img {
+        margin: 10px 0px; }
+      body .navbar .navbar__profile .navbar__profile-content h1 {
+        font-size: x-large; }
+        body .navbar .navbar__profile .navbar__profile-content h1 .name {
+          font-weight: 700; }
+      body .navbar .navbar__profile .navbar__profile-content hr {
+        margin: 5px 0px; }
+      body .navbar .navbar__profile .navbar__profile--links {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 10px 0px;
+        padding: 0px; }
+        body .navbar .navbar__profile .navbar__profile--links li {
+          margin: 0px 5px; }
+      body .navbar .navbar__profile .navbar__links {
+        width: 100%;
+        padding: 20px 10px; }
+        body .navbar .navbar__profile .navbar__links li {
+          text-decoration: underline;
+          padding: 10px 0px; }
+          body .navbar .navbar__profile .navbar__links li a {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s; }
+            body .navbar .navbar__profile .navbar__links li a:hover {
+              padding-right: 24px;
+              padding-left: 8px; }
+              body .navbar .navbar__profile .navbar__links li a:hover::after {
+                opacity: 1;
+                right: 10px; }
+            body .navbar .navbar__profile .navbar__links li a::after {
+              content: "  🎈";
+              position: absolute;
+              opacity: 0;
+              right: -20px;
+              transition: 0.5s; }
+  body .content {
+    grid-row: 1; }

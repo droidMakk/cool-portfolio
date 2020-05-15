@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <link rel="stylesheet" href="/assets/tailwind.min.css">
     <link rel="stylesheet" href="/main.css">
     <title>HOME</title>
 </head>
+
 <body>
-    <div>
-        TEst
+    <nav class="navbar">
+        <div class="navbar__profile">
+            <img src="/assets/img/profile.jpg" alt="kabeer" />
+            <div class="navbar__profile-content">
+                <h1>Hi,
+                    <span>I'm</span>
+                    <span class="name">Kabeer</span>
+                </h1>
+                <hr />
+                <p>
+                    <span id="info" >Freelancer, Fullstack Developer</span>
+                </p>
+            </div>
+            <ul class="navbar__profile--links">
+                <li><a href="https://dev.to/droidmakk">Dev.To</a></li>
+                <li><a href="https://github.com/droidmakk">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/droidmakk">LinkedIn</a></li>
+                <li><a href="tel:+918939717211">Phone</a></li>
+            </ul>
+            <ul class="navbar__links">
+                <li><a href="/about"><span>🤔 Who I am? &emsp;</span></a></li>
+                <li><a href="/about"><span>👨‍💻 What i code? &emsp;</span></a></li>
+                <li><a href="/about"><span>💪 Some of my Works! &emsp;</span></a></li>
+                <li><a href="/about"><span>👷‍♂️ Hire Me &emsp;</span></a></li>
+                <li><a href="/about"><span>📷 When i don't code &emsp;</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <canvas class="background">
+        </canvas>
     </div>
 </body>
+<script>
+    window.onload = function () {
+        var typed = new Typed('#info', {
+            // Waits 1000ms after typing "First"
+            backDelay: 700,
+            loop: true,
+            smartBackspace: true,
+            strings: [
+                'Freelancer, ^1000 Fullstack...',
+                'Freelancer, ^1000 React Native...',
+                'Freelancer, ^1000 UWP...',
+                'Freelancer, ^1000 NodeJS...',
+            ]
+        });
+        Particles.init({
+            selector: '.background',
+            color: '#75A5B7',
+            maxParticles: 130,
+            connectParticles: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    options: {
+                        maxParticles: 80
+                    }
+                }, {
+                    breakpoint: 375,
+                    options: {
+                        maxParticles: 50
+                    }
+                }
+            ]
+        });
+    };
+</script>
+
 </html>
