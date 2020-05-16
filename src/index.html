@@ -264,7 +264,7 @@
                     </div>
                 </div>
             </section>
-            <section class="works">
+            <section class="works" id="works" >
                 <div class="works__title content__title">
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#F1C21B"
@@ -332,7 +332,7 @@
                     </div>
                 </div>
             </section>
-            <section class="dontcode">
+            <section class="dontcode" id="dontcode" >
                 <div class="dontcode__title content__title">
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#F1C21B"
@@ -388,18 +388,38 @@
     </div>
 </body>
 <script>
+    function closeNav() {
+        if (window.innerWidth < 768) {
+            const nav_bar = document.querySelector('.navbar');
+            nav_bar.style.height = '0px';
+        }
+    }
     $(document).ready(function () {
+        $('#btn_iam').click(function () {
+            closeNav();
+            document.querySelector('#aboutme').scrollIntoView({ behavior: 'smooth' })
+        })
+        $('#btn_code').click(function () {
+            closeNav();
+            document.querySelector('#code').scrollIntoView({ behavior: 'smooth' })
+        })
+        $('#btn_works').click(function () {
+            closeNav();
+            document.querySelector('#works').scrollIntoView({ behavior: 'smooth' })
+        })
+        $('#btn_dontcode').click(function () {
+            closeNav();
+            document.querySelector('#dontcode').scrollIntoView({ behavior: 'smooth' })
+        })
+
+
         $('#open_btn').click(function () {
             const nav_bar = document.querySelector('.navbar');
-            console.info('nav_bar', nav_bar);
             nav_bar.style.height = '100vh';
         })
         $('#close_btn').click(function () {
             const nav_bar = document.querySelector('.navbar');
             nav_bar.style.height = '0px';
-        })
-        $('#btn_iam').click(function () {
-
         })
         $('.responsive_carousel').slick({
             dots: true,
