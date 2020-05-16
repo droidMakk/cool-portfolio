@@ -8,9 +8,31 @@ body {
     display: grid;
     @media only screen and (min-width: 768px) {
         grid-template-columns: 30vw 1fr;
+        .navbar{
+            .close_btn{
+                display: none;
+            }
+        }
     }
     @media only screen and (max-width: 600px) {
         grid-template-columns: 0px 1fr;
+
+        .navbar{
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            grid-row: unset !important;
+            z-index: 1;
+
+            .close_btn{
+                float: right;
+            }
+        }
+
+        .content{
+            width: 100vw;
+        }
     }
     height: 100vh;
     font-family: karla;

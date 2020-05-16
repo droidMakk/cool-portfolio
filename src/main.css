@@ -21,10 +21,23 @@ body {
   font-family: karla; }
   @media only screen and (min-width: 768px) {
     body {
-      grid-template-columns: 30vw 1fr; } }
+      grid-template-columns: 30vw 1fr; }
+      body .navbar .close_btn {
+        display: none; } }
   @media only screen and (max-width: 600px) {
     body {
-      grid-template-columns: 0px 1fr; } }
+      grid-template-columns: 0px 1fr; }
+      body .navbar {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        grid-row: unset !important;
+        z-index: 1; }
+        body .navbar .close_btn {
+          float: right; }
+      body .content {
+        width: 100vw; } }
   body .navbar {
     grid-row: 1;
     display: flex;
