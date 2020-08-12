@@ -22,6 +22,40 @@ body {
     @media only screen and (max-width: 600px) {
         grid-template-columns: 0px 1fr;
 
+        .content__container {
+            margin: 0px 10px;
+        }
+        
+        section#aboutme, section#code, section#works, section#dontcode {
+            padding: 0 40px 20px 50px;
+            width: 70% !important;
+        }
+        
+        h1 {
+            font-size: xx-large !important;
+            margin: 0px;
+            margin-top: 40px;
+            width: 100%;
+        }
+        
+        .code__title.content__title {
+            margin-bottom: 3rem;
+        }
+
+        body .navbar .navbar__profile img {
+            width: 50% !important;
+            margin: 0px !important;
+        }
+        
+        .linkcons {
+            margin: 0px !important;
+
+            img {
+                width: 30px !important;
+                margin: 15px 20px !important;
+            }
+        }
+
         .close_btn,
         .open_btn {
             svg {
@@ -163,7 +197,25 @@ body {
         background: #d4d4d4;
         overflow: hidden scroll;
 
+        .header{
+            display: none;
+        }
+
         @media only screen and (max-width: 600px) {
+
+            .header{
+                position: sticky;
+                display: block;
+                top: 0;
+                z-index: 100;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                vertical-align: middle;
+                align-items: center;
+                background-color: #ffb300;
+            }
+            
             section {
                 width: 58% !important;
                 .content__title {

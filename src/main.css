@@ -30,6 +30,26 @@ body {
   @media only screen and (max-width: 600px) {
     body {
       grid-template-columns: 0px 1fr; }
+      body .content__container {
+        margin: 0px 10px; }
+      body section#aboutme, body section#code, body section#works, body section#dontcode {
+        padding: 0 40px 20px 50px;
+        width: 70% !important; }
+      body h1 {
+        font-size: xx-large !important;
+        margin: 0px;
+        margin-top: 40px;
+        width: 100%; }
+      body .code__title.content__title {
+        margin-bottom: 3rem; }
+      body body .navbar .navbar__profile img {
+        width: 50% !important;
+        margin: 0px !important; }
+      body .linkcons {
+        margin: 0px !important; }
+        body .linkcons img {
+          width: 30px !important;
+          margin: 15px 20px !important; }
       body .close_btn svg,
       body .open_btn svg {
         width: 2rem;
@@ -123,7 +143,20 @@ body {
     justify-content: center;
     background: #d4d4d4;
     overflow: hidden scroll; }
+    body .content .header {
+      display: none; }
     @media only screen and (max-width: 600px) {
+      body .content .header {
+        position: sticky;
+        display: block;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        vertical-align: middle;
+        align-items: center;
+        background-color: #ffb300; }
       body .content section {
         width: 58% !important; }
         body .content section .content__title {
