@@ -19,6 +19,9 @@ body {
   display: grid;
   height: 100vh;
   font-family: karla; }
+  body .profile--img {
+    width: 60% !important;
+    margin: 0px !important; }
   @media only screen and (min-width: 768px) {
     body {
       grid-template-columns: 30vw 1fr; }
@@ -42,9 +45,6 @@ body {
         width: 100%; }
       body .code__title.content__title {
         margin-bottom: 3rem; }
-      body body .navbar .navbar__profile img {
-        width: 50% !important;
-        margin: 0px !important; }
       body .linkcons {
         margin: 0px !important; }
         body .linkcons img {
@@ -65,7 +65,7 @@ body {
         top: 0;
         left: 0;
         grid-row: unset !important;
-        z-index: 2;
+        z-index: 1000;
         transition: height 0.4s cubic-bezier(0, 0, 0.2, 1); }
         body .navbar .navbar__profile {
           position: relative; }
