@@ -4,9 +4,16 @@ html {
     scroll-behavior: smooth;
 }
 
+// $section-bg: #424242;
+$section-bg: #f5f5f5;
+$yellow: #fdbd53;
+$black: #3c3d41;
+// $section-font-color:  #F5F5F5;
+$section-font-color: #424242;
+
 body {
     display: grid;
-    .profile--img{
+    .profile--img {
         width: 60% !important;
         margin: 0px !important;
     }
@@ -29,23 +36,15 @@ body {
         .content__container {
             margin: 0px 10px;
         }
-        
-        section#aboutme, section#code, section#works, section#dontcode {
-            padding: 0 50px 20px 50px;
-            width: 70% !important;
+
+        section#aboutme,
+        section#code,
+        section#works,
+        section#dontcode {
+            padding: 30px 40px;
+            // width: 70% !important;
         }
-        
-        h1 {
-            font-size: xx-large !important;
-            margin: 0px;
-            margin-top: 40px;
-            width: 100%;
-        }
-        
-        .code__title.content__title {
-            margin-bottom: 3rem;
-        }
-        
+
         .linkcons {
             margin: 0px !important;
 
@@ -113,7 +112,6 @@ body {
         overflow: hidden;
 
         .navbar__profile {
-            padding: 20px 60px;
             transform: none;
             width: 80%;
 
@@ -123,19 +121,14 @@ body {
 
             .navbar__profile-content {
                 h1 {
-                    font-size: x-large;
-
-                    .name {
-                        font-weight: 700;
-                    }
+                    font-size: xx-large;
+                    margin: 1rem 0rem;
+                    font-weight: 100;
+                    text-shadow: 2px 2px 5px #00000042;
                 }
 
                 hr {
                     border: solid 0.1px black;
-                }
-
-                p {
-                    font-size: x-large;
                 }
             }
 
@@ -150,6 +143,17 @@ body {
                     svg {
                         width: 25px;
                         height: 25px;
+                        padding: 10px;
+                        stroke: $black;
+                        border-radius: 50%;
+                        transition: all ease-in 0.2s;
+                        &:hover {
+                            stroke: $yellow;
+                            background-color: $black;
+                            box-shadow: 0 0.8px 4px rgba(0, 0, 0, 0.025), 0 1.9px 8.8px rgba(0, 0, 0, 0.035),
+                                0 3.9px 15.9px rgba(0, 0, 0, 0.045), 0 8px 29.3px rgba(0, 0, 0, 0.055),
+                                0 22px 74px rgba(0, 0, 0, 0.08);
+                        }
                     }
                 }
             }
@@ -159,15 +163,16 @@ body {
                 padding: 20px 10px;
 
                 li {
-                    text-decoration: underline;
                     padding: 10px 0px;
                     cursor: pointer;
                     display: inline-block;
                     position: relative;
                     transition: 0.5s;
                     font-size: x-large;
+                    width: 100%;
 
                     &:hover {
+                        text-decoration: underline;
                         padding-right: 24px;
                         padding-left: 8px;
 
@@ -178,7 +183,7 @@ body {
                     }
 
                     &::after {
-                        content: "  🎈";
+                        content: "  👈";
                         position: absolute;
                         opacity: 0;
                         right: -20px;
@@ -196,13 +201,12 @@ body {
         background: #d4d4d4;
         overflow: hidden scroll;
 
-        .header{
+        .header {
             display: none;
         }
 
         @media only screen and (max-width: 600px) {
-
-            .header{
+            .header {
                 position: sticky;
                 display: block;
                 top: 0;
@@ -210,32 +214,12 @@ body {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
-                vertical-align: middle;
                 align-items: center;
                 background-color: #ffb300;
             }
-            
+
             section {
                 width: 58% !important;
-                .content__title {
-                    margin-bottom: 5rem !important;
-                    margin-left: 0px !important;
-
-                    h1 {
-                        margin-left: 0px;
-                    }
-                }
-                .aboutme__content {
-                    .life {
-                        padding-top: 20rem !important;
-                    }
-
-                    .main {
-                        top: -6rem !important;
-                        right: -1rem !important;
-                        font-size: x-large !important;
-                    }
-                }
 
                 .content__content {
                     margin-top: 0px !important;
@@ -257,9 +241,10 @@ body {
         section {
             width: 70%;
             margin: 30px 0px;
-            background: white;
-            padding: 0px 80px 20px 80px;
+            background: $section-bg;
+            padding: 50px;
             border-radius: 5px;
+            color: $section-font-color;
             box-shadow: 1px 1px 5px #a09c9c;
             height: fit-content;
             position: relative;
@@ -276,26 +261,16 @@ body {
             }
 
             .content__title {
-                display: flex;
-                align-items: center;
-                margin-left: -10rem;
-                svg {
-                    width: 15vw;
-                    text-shadow: green($color: #000000);
-                }
+                margin-bottom: 1.2rem;
+
                 h1 {
-                    margin-left: -100px;
-                    font-size: xxx-large;
+                    font-size: xx-large;
                     font-weight: bolder;
                 }
             }
             .content__content {
-                margin-top: -30px;
-                .funny {
-                    text-decoration: line-through;
-                }
                 p {
-                    font-size: x-large;
+                    font-size: large;
                 }
             }
         }
@@ -304,26 +279,26 @@ body {
             .aboutme__content {
                 position: relative;
 
-                .main {
-                    position: absolute;
-                    top: -7.5rem;
-                    right: -2rem;
-                    font-size: xx-large;
-                }
-                .name {
-                    span {
-                        font-family: kaushan script;
-                        font-size: xx-large;
+                .life {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 25px 0px;
+
+                    img {
+                        width: 25%;
+                    }
+
+                    p {
+                        font-size: large;
+                        width: 70%;
                     }
                 }
-                .life {
-                    background-image: url("/assets/img/chennai-central-railway-station.svg");
-                    background-repeat: no-repeat;
-                    padding: 20px;
-                    text-align: right;
-                    font-family: monospace;
-                }
                 .short {
+                    font-size: large;
+                    font-weight: 400;
+                    color: #0d47a1;
                     background: #c4e3f1;
                     padding: 15px 20px;
                     border-radius: 5px;
@@ -334,12 +309,15 @@ body {
         .code {
             .code__content {
                 .content__message {
+                    font-size: large;
+                    margin-bottom: 1.5rem;
                 }
                 .content__note {
                     background-color: #c2ffc5;
                     color: #005f04;
                     padding: 15px;
                     font-size: large;
+                    margin-bottom: 1.5rem;
                     text-align: center;
                 }
 
@@ -351,7 +329,7 @@ body {
                 .fwcard {
                     margin-left: 20px;
                     background: black;
-                    padding: 14px 15px;
+                    padding: 13px 12px;
                     border-radius: 20px;
                     color: white;
                     display: inline-flex;
@@ -363,7 +341,7 @@ body {
                         width: 1.2rem;
                     }
                     p {
-                        font-size: large;
+                        font-size: small;
                         margin: 0px 5px;
                         padding: 0px;
                     }
@@ -378,6 +356,11 @@ body {
                 text-align: center;
                 border-radius: 5px;
             }
+
+            .work__title {
+                margin-top: 1.5rem;
+            }
+
             .work {
                 display: inline-flex;
                 height: auto;
@@ -393,7 +376,6 @@ body {
 
                     p {
                         padding: 0;
-                        margin: 10px 20px 0px 0px;
                     }
                 }
             }
@@ -401,9 +383,18 @@ body {
 
         .dontcode__content {
             .socialinfo {
-                padding: 20px 20px;
+                padding: 15px;
                 background: #b2dfdb;
                 border-radius: 5px;
+                margin: 1.5rem 0px;
+            }
+            .social__links {
+                p {
+                    font-size: large;
+                    text-align: justify;
+                    margin-bottom: 1.4rem;
+                    padding: 10px;
+                }
             }
             img {
                 width: 200px;
@@ -411,13 +402,29 @@ body {
             }
             .linkcons {
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 margin: 20px;
                 flex-wrap: wrap;
-                a > img {
-                    width: 40px;
+                width: 60%;
+                margin: auto;
+                a > svg {
+                    width: 30px;
+                    margin: 5px 10px;
+                    padding: 0px 10px;
+                    border-radius: 50%;
+                    stroke: $black;
+                    transition: all ease-in 0.2s;
+                    &:hover {
+                        stroke: $yellow;
+                        background-color: $black;
+                    }
                 }
             }
+        }
+
+        .final {
+            font-size: large;
+            margin-bottom: 2rem;
         }
     }
 }

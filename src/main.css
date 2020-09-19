@@ -12,6 +12,10 @@ ul, li {
   margin-block-start: 0em;
   margin-block-end: 0em; }
 
+h1, h2, h3, h4, h5, p {
+  margin: 0px;
+  padding: 0px; }
+
 html {
   scroll-behavior: smooth; }
 
@@ -35,16 +39,11 @@ body {
       grid-template-columns: 0px 1fr; }
       body .content__container {
         margin: 0px 10px; }
-      body section#aboutme, body section#code, body section#works, body section#dontcode {
-        padding: 0 50px 20px 50px;
-        width: 70% !important; }
-      body h1 {
-        font-size: xx-large !important;
-        margin: 0px;
-        margin-top: 40px;
-        width: 100%; }
-      body .code__title.content__title {
-        margin-bottom: 3rem; }
+      body section#aboutme,
+      body section#code,
+      body section#works,
+      body section#dontcode {
+        padding: 30px 40px; }
       body .linkcons {
         margin: 0px !important; }
         body .linkcons img {
@@ -91,19 +90,17 @@ body {
     max-height: 100vh;
     overflow: hidden; }
     body .navbar .navbar__profile {
-      padding: 20px 60px;
       transform: none;
       width: 80%; }
       body .navbar .navbar__profile img {
         margin: 10px 0px; }
       body .navbar .navbar__profile .navbar__profile-content h1 {
-        font-size: x-large; }
-        body .navbar .navbar__profile .navbar__profile-content h1 .name {
-          font-weight: 700; }
+        font-size: xx-large;
+        margin: 1rem 0rem;
+        font-weight: 100;
+        text-shadow: 2px 2px 5px #00000042; }
       body .navbar .navbar__profile .navbar__profile-content hr {
         border: solid 0.1px black; }
-      body .navbar .navbar__profile .navbar__profile-content p {
-        font-size: x-large; }
       body .navbar .navbar__profile .navbar__profile--links {
         display: flex;
         justify-content: center;
@@ -113,26 +110,35 @@ body {
           margin: 0px 20px; }
           body .navbar .navbar__profile .navbar__profile--links li svg {
             width: 25px;
-            height: 25px; }
+            height: 25px;
+            padding: 10px;
+            stroke: #3c3d41;
+            border-radius: 50%;
+            transition: all ease-in 0.2s; }
+            body .navbar .navbar__profile .navbar__profile--links li svg:hover {
+              stroke: #fdbd53;
+              background-color: #3c3d41;
+              box-shadow: 0 0.8px 4px rgba(0, 0, 0, 0.025), 0 1.9px 8.8px rgba(0, 0, 0, 0.035), 0 3.9px 15.9px rgba(0, 0, 0, 0.045), 0 8px 29.3px rgba(0, 0, 0, 0.055), 0 22px 74px rgba(0, 0, 0, 0.08); }
       body .navbar .navbar__profile .navbar__links {
         width: 100%;
         padding: 20px 10px; }
         body .navbar .navbar__profile .navbar__links li {
-          text-decoration: underline;
           padding: 10px 0px;
           cursor: pointer;
           display: inline-block;
           position: relative;
           transition: 0.5s;
-          font-size: x-large; }
+          font-size: x-large;
+          width: 100%; }
           body .navbar .navbar__profile .navbar__links li:hover {
+            text-decoration: underline;
             padding-right: 24px;
             padding-left: 8px; }
             body .navbar .navbar__profile .navbar__links li:hover::after {
               opacity: 1;
               right: 10px; }
           body .navbar .navbar__profile .navbar__links li::after {
-            content: "  🎈";
+            content: "  👈";
             position: absolute;
             opacity: 0;
             right: -20px;
@@ -154,22 +160,10 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        vertical-align: middle;
         align-items: center;
         background-color: #ffb300; }
       body .content section {
         width: 58% !important; }
-        body .content section .content__title {
-          margin-bottom: 5rem !important;
-          margin-left: 0px !important; }
-          body .content section .content__title h1 {
-            margin-left: 0px; }
-        body .content section .aboutme__content .life {
-          padding-top: 20rem !important; }
-        body .content section .aboutme__content .main {
-          top: -6rem !important;
-          right: -1rem !important;
-          font-size: x-large !important; }
         body .content section .content__content {
           margin-top: 0px !important; }
         body .content section .fwcard {
@@ -182,9 +176,10 @@ body {
     body .content section {
       width: 70%;
       margin: 30px 0px;
-      background: white;
-      padding: 0px 80px 20px 80px;
+      background: #f5f5f5;
+      padding: 50px;
       border-radius: 5px;
+      color: #424242;
       box-shadow: 1px 1px 5px #a09c9c;
       height: fit-content;
       position: relative; }
@@ -198,47 +193,41 @@ body {
         right: 0;
         border-radius: 0px 5px 5px 0px; }
       body .content section .content__title {
-        display: flex;
-        align-items: center;
-        margin-left: -10rem; }
-        body .content section .content__title svg {
-          width: 15vw;
-          text-shadow: 0; }
+        margin-bottom: 1.2rem; }
         body .content section .content__title h1 {
-          margin-left: -100px;
-          font-size: xxx-large;
+          font-size: xx-large;
           font-weight: bolder; }
-      body .content section .content__content {
-        margin-top: -30px; }
-        body .content section .content__content .funny {
-          text-decoration: line-through; }
-        body .content section .content__content p {
-          font-size: x-large; }
+      body .content section .content__content p {
+        font-size: large; }
     body .content .aboutme .aboutme__content {
       position: relative; }
-      body .content .aboutme .aboutme__content .main {
-        position: absolute;
-        top: -7.5rem;
-        right: -2rem;
-        font-size: xx-large; }
-      body .content .aboutme .aboutme__content .name span {
-        font-family: kaushan script;
-        font-size: xx-large; }
       body .content .aboutme .aboutme__content .life {
-        background-image: url("/assets/img/chennai-central-railway-station.svg");
-        background-repeat: no-repeat;
-        padding: 20px;
-        text-align: right;
-        font-family: monospace; }
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px 0px; }
+        body .content .aboutme .aboutme__content .life img {
+          width: 25%; }
+        body .content .aboutme .aboutme__content .life p {
+          font-size: large;
+          width: 70%; }
       body .content .aboutme .aboutme__content .short {
+        font-size: large;
+        font-weight: 400;
+        color: #0d47a1;
         background: #c4e3f1;
         padding: 15px 20px;
         border-radius: 5px; }
+    body .content .code .code__content .content__message {
+      font-size: large;
+      margin-bottom: 1.5rem; }
     body .content .code .code__content .content__note {
       background-color: #c2ffc5;
       color: #005f04;
       padding: 15px;
       font-size: large;
+      margin-bottom: 1.5rem;
       text-align: center; }
     body .content .code .code__content .content__frameworks {
       margin: 25px 0px;
@@ -247,7 +236,7 @@ body {
     body .content .code .code__content .fwcard {
       margin-left: 20px;
       background: black;
-      padding: 14px 15px;
+      padding: 13px 12px;
       border-radius: 20px;
       color: white;
       display: inline-flex;
@@ -258,7 +247,7 @@ body {
       body .content .code .code__content .fwcard img {
         width: 1.2rem; }
       body .content .code .code__content .fwcard p {
-        font-size: large;
+        font-size: small;
         margin: 0px 5px;
         padding: 0px; }
     body .content .works__content .info {
@@ -266,6 +255,8 @@ body {
       background: #fde383;
       text-align: center;
       border-radius: 5px; }
+    body .content .works__content .work__title {
+      margin-top: 1.5rem; }
     body .content .works__content .work {
       display: inline-flex;
       height: auto;
@@ -278,19 +269,37 @@ body {
         width: 10rem;
         border-radius: 5px; }
         body .content .works__content .work .work__item p {
-          padding: 0;
-          margin: 10px 20px 0px 0px; }
+          padding: 0; }
     body .content .dontcode__content .socialinfo {
-      padding: 20px 20px;
+      padding: 15px;
       background: #b2dfdb;
-      border-radius: 5px; }
+      border-radius: 5px;
+      margin: 1.5rem 0px; }
+    body .content .dontcode__content .social__links p {
+      font-size: large;
+      text-align: justify;
+      margin-bottom: 1.4rem;
+      padding: 10px; }
     body .content .dontcode__content img {
       width: 200px;
       margin: 20px 30px; }
     body .content .dontcode__content .linkcons {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       margin: 20px;
-      flex-wrap: wrap; }
-      body .content .dontcode__content .linkcons a > img {
-        width: 40px; }
+      flex-wrap: wrap;
+      width: 60%;
+      margin: auto; }
+      body .content .dontcode__content .linkcons a > svg {
+        width: 30px;
+        margin: 5px 10px;
+        padding: 0px 10px;
+        border-radius: 50%;
+        stroke: #3c3d41;
+        transition: all ease-in 0.2s; }
+        body .content .dontcode__content .linkcons a > svg:hover {
+          stroke: #fdbd53;
+          background-color: #3c3d41; }
+    body .content .final {
+      font-size: large;
+      margin-bottom: 2rem; }
