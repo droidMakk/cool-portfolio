@@ -329,7 +329,7 @@ body {
                 .fwcard {
                     margin-left: 20px;
                     background: black;
-                    padding: 13px 12px;
+                    padding: 10px 12px;
                     border-radius: 20px;
                     color: white;
                     display: inline-flex;
@@ -373,6 +373,17 @@ body {
                     color: white;
                     width: 10rem;
                     border-radius: 5px;
+                    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+                    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+                    * {
+                        cursor: pointer;
+                    }
+
+                    &:hover{
+                        transform: translate3d(0px,-3px,0px);
+                        box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+                    }
 
                     p {
                         padding: 0;
