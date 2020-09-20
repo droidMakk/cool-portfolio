@@ -252,7 +252,8 @@
                     <h1>✨ PROJECTS WORKED ON</h1>
                 </div>
                 <div class="works__content content__content">
-                    <p class="info">🤘 I've been architecting and developing applications based on requirements. Some were scalable and few complex. </p>
+                    <p class="info">🤘 I've been architecting and developing applications based on requirements. Some
+                        were scalable and few complex. </p>
                     <p class="work__title">🌏 SOME WEB PROJECTS</p>
                     <hr />
                     <div class="work">
@@ -370,6 +371,51 @@
             </div>
         </div>
     </div>
+
+    <div class="dialog__container" id="dialog">
+        <div class="dialog">
+            <div class="dialog__title">
+                <div class="title__meta">
+                    <h1>PROJECT TITLE</h1>
+                    <p>Project specification</p>
+                </div>
+                <div class="title__close">
+                    <svg id="dialog-close" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="52"
+                        height="52" viewBox="0 0 24 24" stroke-width="2" stroke="#FDBD53" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="dialog__content">
+                <div class="project__details">
+                    <div class="role">
+                        <h3>ROLE</h3>
+                        <p>A SOFTWARE DEVELOPER</p>
+                    </div>
+                    <div class="stack">
+                        <h3>ABOUT THE PROJECT</h3>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis quis ad consectetur,
+                            ipsum
+                            provident, maxime delectus dignissimos voluptatum commodi, natus laudantium odio.
+                            Blanditiis,
+                            qui
+                            temporibus autem optio quisquam a consequuntur!
+                        </p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <img src="http://via.placeholder.com/480x353" alt="">
+                    <img src="http://via.placeholder.com/480x853" alt="">
+                    <img src="http://via.placeholder.com/580x1053" alt="">
+                    <img src="http://via.placeholder.com/480x853" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script>
     function $(query) { return document.querySelector(query) }
@@ -409,6 +455,14 @@
         $('#close_btn').addEventListener('click', function () {
             const nav_bar = document.querySelector('.navbar');
             nav_bar.style.height = '0px';
+        })
+
+        $('.work__item').addEventListener('click', function () {
+            $('#dialog').style.display = 'flex'
+        })
+
+        $('#dialog-close').addEventListener('click', function () {
+            $('#dialog').style.display = 'none'
         })
     })();
 </script>

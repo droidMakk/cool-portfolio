@@ -380,9 +380,9 @@ body {
                         cursor: pointer;
                     }
 
-                    &:hover{
-                        transform: translate3d(0px,-3px,0px);
-                        box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+                    &:hover {
+                        transform: translate3d(0px, -3px, 0px);
+                        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
                     }
 
                     p {
@@ -436,6 +436,83 @@ body {
         .final {
             font-size: large;
             margin-bottom: 2rem;
+        }
+    }
+}
+
+.dialog__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a8;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    display: none;
+
+    .dialog {
+        background-color: $section-bg;
+        padding: 30px;
+        color: $black;
+        height: 70%;
+        width: 70%;
+        box-sizing: border-box;
+        border-radius: 5px;
+
+        .dialog__title {
+            flex-direction: row;
+            display: flex;
+            justify-content: space-between;
+            p {
+                color: grey;
+            }
+            .title__meta {
+            }
+
+            svg {
+                width: 25px;
+                height: 25px;
+                padding: 5px 5px;
+                border-radius: 50%;
+                stroke: $black;
+                cursor: pointer;
+
+                &:hover {
+                    stroke: $yellow;
+                    background: $black;
+                }
+            }
+        }
+
+        .dialog__content {
+            display: flex;
+            flex-direction: row;
+
+            .project__details {
+                flex: 0.5;
+                margin-right: 5%;
+                margin-top: 20px;
+
+                .role {
+                    margin: 20px 0px;
+                }
+            }
+            .gallery {
+                display: flex;
+                overflow: hidden scroll;
+                flex-direction: row;
+                flex: 1;
+                flex-wrap: wrap;
+                box-sizing: border-box;
+                max-height: 50vh;
+
+                img {
+                    height: 80%;
+                    margin: 10px 15px;
+                }
+            }
         }
     }
 }
