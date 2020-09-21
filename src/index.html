@@ -257,13 +257,13 @@
                     <p class="work__title">🌏 SOME WEB PROJECTS</p>
                     <hr />
                     <div class="work">
-                        <div class="work__item">
+                        <div class="work__item" data-type="shortflix">
                             <p>SHORTFLIX</p>
                         </div>
-                        <div class="work__item">
+                        <div class="work__item" data-type="crm-app">
                             <p>CRM APP</p>
                         </div>
-                        <div class="work__item">
+                        <div class="work__item" data-type="dauno-kart" >
                             <p>DAUNO KART</p>
                         </div>
                         <div class="work__item">
@@ -371,100 +371,174 @@
             </div>
         </div>
     </div>
-
-    <div class="dialog__container" id="dialog">
-        <div class="dialog">
-            <div class="dialog__title">
-                <div class="title__meta">
-                    <h1>PROJECT TITLE</h1>
-                    <p>Project specification</p>
-                </div>
-                <div class="title__close">
-                    <svg id="dialog-close" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="52"
-                        height="52" viewBox="0 0 24 24" stroke-width="2" stroke="#FDBD53" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round" >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </div>
-            </div>
-            <div class="dialog__content">
-                <div class="project__details">
-                    <div class="role">
-                        <h3>ROLE</h3>
-                        <p>A SOFTWARE DEVELOPER</p>
+    <template id="dialog-template">
+        <div class="dialog__container" id="dialog">
+            <div class="dialog">
+                <div class="dialog__title">
+                    <div class="title__meta">
+                        <h1><span id="title"></span></h1>
+                        <p><span id="description"></span></p>
                     </div>
-                    <div class="stack">
-                        <h3>ABOUT THE PROJECT</h3>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis quis ad consectetur,
-                            ipsum
-                            provident, maxime delectus dignissimos voluptatum commodi, natus laudantium odio.
-                            Blanditiis,
-                            qui
-                            temporibus autem optio quisquam a consequuntur!
-                        </p>
+                    <div class="title__close">
+                        <svg id="dialog-close" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
+                            width="52" height="52" viewBox="0 0 24 24" stroke-width="2" stroke="#FDBD53" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                     </div>
                 </div>
-                <div class="gallery">
-                    <img src="http://via.placeholder.com/480x353" alt="">
-                    <img src="http://via.placeholder.com/480x853" alt="">
-                    <img src="http://via.placeholder.com/580x1053" alt="">
-                    <img src="http://via.placeholder.com/480x853" alt="">
+                <div class="dialog__content">
+                    <div class="project__details">
+                        <div class="role">
+                            <h3>ROLE</h3>
+                            <p><span id="role"></span></p>
+                        </div>
+                        <div class="stack">
+                            <h3>ABOUT THE PROJECT</h3>
+                            <p>
+                                <span id="about"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-<script>
-    function $(query) { return document.querySelector(query) }
-    function closeNav() {
-        if (window.innerWidth < 768) {
-            const nav_bar = $('.navbar');
-            nav_bar.style.height = '0px';
+    </template>
+    <script>
+
+        const projects = [
+            {
+                title: 'SHORTFLIX',
+                description: 'An OTT Platform to stream shortfilms and basic actions',
+                role: 'Fullstack Developer.',
+                class: 'shortflix',
+                about: `
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Veniam nam suscipit a culpa inventore optio voluptatum illum
+                    distinctio vero omnis, placeat qui quasi vitae, ratione similique 
+                    incidunt! Pariatur, veritatis ex.
+                    `,
+                images: [
+                    "http://via.placeholder.com/480x353",
+                    "http://via.placeholder.com/480x853",
+                    "http://via.placeholder.com/580x1053",
+                    "http://via.placeholder.com/480x853"
+                ]
+            },
+            {
+                title: 'CRM APP',
+                description: 'A Minimal CRM to host meetings, manage inquires and admins',
+                role: 'Fullstack Developer.',
+                class: 'crm-app',
+                about: `
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Veniam nam suscipit a culpa inventore optio voluptatum illum
+                    distinctio vero omnis, placeat qui quasi vitae, ratione similique 
+                    incidunt! Pariatur, veritatis ex.
+                    `,
+                images: [
+                    "http://via.placeholder.com/480x353",
+                    "http://via.placeholder.com/480x853",
+                    "http://via.placeholder.com/580x1053",
+                    "http://via.placeholder.com/480x853"
+                ]
+            },
+            {
+                title: 'DAUNO KART',
+                description: 'An Ecommerce application, and More.',
+                role: 'Fullstack Developer.',
+                class: 'dauno-kart',
+                about: `
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Veniam nam suscipit a culpa inventore optio voluptatum illum
+                    distinctio vero omnis, placeat qui quasi vitae, ratione similique 
+                    incidunt! Pariatur, veritatis ex.
+                    `,
+                images: [
+                    "http://via.placeholder.com/480x353",
+                    "http://via.placeholder.com/480x853",
+                    "http://via.placeholder.com/580x1053",
+                    "http://via.placeholder.com/480x853"
+                ]
+            }
+        ]
+
+        function $(query) { return document.querySelector(query) }
+        function closeNav() {
+            if (window.innerWidth < 768) {
+                const nav_bar = $('.navbar');
+                nav_bar.style.height = '0px';
+            }
         }
-    }
-    (function () {
-        $('#btn_iam').addEventListener('click', () => {
-            closeNav();
-            $('#aboutme').scrollIntoView({ behavior: 'smooth' })
-        })
-        $('#btn_iam').click(function () {
-            closeNav();
-            document.querySelector('#aboutme').scrollIntoView({ behavior: 'smooth' })
-        })
-        $('#btn_code').addEventListener('click', function () {
-            closeNav();
-            document.querySelector('#code').scrollIntoView({ behavior: 'smooth' })
-        })
-        $('#btn_works').addEventListener('click', function () {
-            closeNav();
-            document.querySelector('#works').scrollIntoView({ behavior: 'smooth' })
-        })
-        $('#btn_dontcode').addEventListener('click', function () {
-            closeNav();
-            document.querySelector('#dontcode').scrollIntoView({ behavior: 'smooth' })
-        })
+        function createAndAppendImages(img_array = [], node) {
+            img_array.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                node.appendChild(img);
+            })
+        }
 
 
-        $('#open_btn').addEventListener('click', function () {
-            const nav_bar = document.querySelector('.navbar');
-            nav_bar.style.height = '100vh';
-        })
-        $('#close_btn').addEventListener('click', function () {
-            const nav_bar = document.querySelector('.navbar');
-            nav_bar.style.height = '0px';
-        })
+        (function () {
+            $('#btn_iam').addEventListener('click', () => {
+                closeNav();
+                $('#aboutme').scrollIntoView({ behavior: 'smooth' })
+            })
+            $('#btn_iam').click(function () {
+                closeNav();
+                document.querySelector('#aboutme').scrollIntoView({ behavior: 'smooth' })
+            })
+            $('#btn_code').addEventListener('click', function () {
+                closeNav();
+                document.querySelector('#code').scrollIntoView({ behavior: 'smooth' })
+            })
+            $('#btn_works').addEventListener('click', function () {
+                closeNav();
+                document.querySelector('#works').scrollIntoView({ behavior: 'smooth' })
+            })
+            $('#btn_dontcode').addEventListener('click', function () {
+                closeNav();
+                document.querySelector('#dontcode').scrollIntoView({ behavior: 'smooth' })
+            })
 
-        $('.work__item').addEventListener('click', function () {
-            $('#dialog').style.display = 'flex'
-        })
 
-        $('#dialog-close').addEventListener('click', function () {
-            $('#dialog').style.display = 'none'
-        })
-    })();
-</script>
+            $('#open_btn').addEventListener('click', function () {
+                const nav_bar = document.querySelector('.navbar');
+                nav_bar.style.height = '100vh';
+            })
+            $('#close_btn').addEventListener('click', function () {
+                const nav_bar = document.querySelector('.navbar');
+                nav_bar.style.height = '0px';
+            })
+
+            document.querySelectorAll('.work__item').forEach(item => {
+                item.addEventListener('click', function () {
+                    if($('.' + item.dataset.type)) $('.' + item.dataset.type).style.display = 'flex';
+                    else console.info('ADD THAT PROJECT MAN!');
+                })
+            })
+
+            const dialog_fragment = document.getElementById('dialog-template');
+            projects.forEach(({ title, description, about, role, images, class: className }) => {
+                const dialog = document.importNode(dialog_fragment.content, true);
+                dialog.querySelector('#title').innerText = title;
+                dialog.querySelector('#description').innerText = description;
+                dialog.querySelector('#role').innerText = role;
+                dialog.querySelector('#about').innerText = about;
+                dialog.querySelector('#dialog').classList.add(className);
+                createAndAppendImages(images, dialog.querySelector('.gallery'));
+                dialog.querySelector('#dialog-close').addEventListener('click', function (event) {
+                    $('.' + className).style.display = 'none'
+                })
+
+                document.body.appendChild(dialog);
+            })
+        })();
+    </script>
+</body>
 
 </html>
